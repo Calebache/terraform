@@ -40,3 +40,24 @@ module "aks" {
   ]
 
 }
+
+module "nginx" {
+  source = "./modules/nginx-ingress"
+  base_name = "ingress-nginx"
+  repository = "https://kubernetes.github.io/ingress-nginx"
+  chart = "ingress -nginx"
+  namespace = "ingress-nginx"
+
+  depends_on = [
+    module.rg
+  ]
+}
+
+module "cert-manager" {
+  source = "./modules/cert-manager"
+  base_name = "cert-manager"
+  repository = "https://charts.jetstack.io"
+  chart = "cert-manager"
+  version    = "v1.11.0"
+  namespace  = "cert-manager"
+}
