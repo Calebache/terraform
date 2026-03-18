@@ -1,4 +1,4 @@
-variable "virtual_network_name" {
+variable "name" {
   type = string
 }
 
@@ -24,4 +24,5 @@ variable "address_space" {
 
 variable "dns_servers" {
   type = list(any)
+  default = []
 }

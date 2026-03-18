@@ -23,17 +23,17 @@ variable "subnet_range" {
 }
 
 variable "enable_public_subnet" {
-  type = bool
+  type    = bool
   default = false
 }
 
 variable "delegations" {
   type = list(
     object(
-        {
-            name = string
-            actions = list(string)
-        }
+      {
+        name    = string
+        actions = list(string)
+      }
     )
   )
   default = []

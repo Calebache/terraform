@@ -1,8 +1,8 @@
 resource "azurerm_nat_gateway" "ngw" {
-  name                    = "ngw-${var.environment}-${var.region_code}-${lower(var.natgw_name)}"
-  location                = var.location
-  resource_group_name     = var.resource_group_name
-  sku_name                = var.sku_name
+  name                = "ngw-${var.environment}-${var.region_code}-${lower(var.natgw_name)}"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  sku_name            = var.sku_name
 }
 
 resource "azurerm_nat_gateway_public_ip_association" "example" {

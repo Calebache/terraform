@@ -1,19 +1,19 @@
 variable "environment" {
   description = "The environment for the VM (e.g., dev, stg, prod)"
   type        = string
-  
+
 }
 
 variable "region_short_code" {
   description = "Short code for the region (e.g., us, eu, cc)"
   type        = string
-  
+
 }
 
-variable "name" {
+variable "vm_name" {
   description = "The base name for the VM"
   type        = string
-  
+
 }
 
 variable "resource_group_name" {
@@ -36,7 +36,7 @@ variable "admin_username" {
   type        = string
 }
 
-variable "admin_ssh_key" {
+variable "admin_password" {
   description = "The public SSH key for the admin user"
   type        = string
 }
@@ -55,25 +55,25 @@ variable "os_disk_caching" {
 variable "os_disk_storage_account_type" {
   description = "The storage account type for the OS disk (e.g., StandardSSD_LRS, Premium_LRS)"
   type        = string
-  default     = "StandardSSD_LRS"
+  default     = "Standard_LRS"
 }
 
 variable "image_publisher" {
   description = "The publisher of the image to use for the VM"
   type        = string
-  default     = "Canonical"
+  default     = "MicrosoftWindowsServer"
 }
 
 variable "image_offer" {
   description = "The offer of the image to use for the VM"
   type        = string
-  default     = "UbuntuServer"
+  default     = "WindowsServer"
 }
 
 variable "image_sku" {
   description = "The SKU of the image to use for the VM"
   type        = string
-  default     = "20.04-LTS"
+  default     = "2016-Datacenter"
 }
 
 variable "image_version" {

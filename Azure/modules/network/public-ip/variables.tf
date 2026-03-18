@@ -19,16 +19,16 @@ variable "public_ip_name" {
 }
 
 variable "allocation_method" {
-  type = string
+  type    = string
   default = "Static"
 }
 
 variable "ip_version" {
-  type = string
+  type    = string
   default = "IPv4"
 }
 
 variable "sku" {
-  type = string
+  type    = string
   default = "Standard"
 }
